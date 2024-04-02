@@ -61,7 +61,8 @@ class Date:
       return f"{dias_semana[self.weekday]} {self.day} {meses[self.month - 1]} {self.year}"
 
     def __add__(self, days: int) -> Date:
-        '''Sumar un número de días a la fecha'''
+        from datetime import datetime, timedelta
+        return Date(* (datetime(self.year, self.month, self.day) + timedelta(days=days)).timetuple()[:3])
         ...
 
     def __sub__(self, other: Date | int) -> int | Date:
