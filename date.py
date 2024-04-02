@@ -46,11 +46,13 @@ class Date:
 
     @property
     def is_weekend(self) -> bool:
-        ...
+            return self.weekday >= 5
+
 
     @property
     def short_date(self) -> str:
-        '''02/09/2003'''
+            return f"{self.day:02d}/{self.month:02d}/{self.year}"
+
         
 
     def __str__(self):
