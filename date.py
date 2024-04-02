@@ -72,7 +72,9 @@ class Date:
         ...
 
     def __lt__(self, other) -> bool:
-        ...
+        if not isinstance(other, Date):
+            raise TypeError("La comparación solo es válida entre fechas")
+        return self.get_delta_days() < other.get_delta_days()
 
     def __gt__(self, other) -> bool:
         ...
