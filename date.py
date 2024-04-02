@@ -9,7 +9,7 @@ class Date:
         if not (1 <= month <= 12):
             month = 1
         
-            days_in_month = [31, 28 if not self.is_leap_year(year) else 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        days_in_month = [31, 28 if not self.is_leap_year(year) else 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
         
         if not (1 <= day <= days_in_month[month - 1]):
             day = 1
