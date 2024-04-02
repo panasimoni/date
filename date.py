@@ -51,7 +51,7 @@ class Date:
 
     @property
     def short_date(self) -> str:
-            return f"{self.day:02d}/{self.month:02d}/{self.year}"
+            return f"{self.day}/{self.month}/{self.year}"
 
         
 
