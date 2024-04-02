@@ -41,8 +41,8 @@ class Date:
 
     @property
     def weekday(self) -> int:
-        '''Día de la semana de la fecha (0 para domingo, ..., 6 para sábado).'''
-        ...
+        d, m, H, S = self.day, (self.month + 9) % 12 + 3, self.year % 100, self.year // 100
+        return ((d + 13*(m+1)//5 + H + H//4 + S//4 - 2*S) % 7 + 6) % 7
 
     @property
     def is_weekend(self) -> bool:
@@ -51,7 +51,7 @@ class Date:
     @property
     def short_date(self) -> str:
         '''02/09/2003'''
-        ...
+        
 
     def __str__(self):
         '''MARTES 2 DE SEPTIEMBRE DE 2003'''
