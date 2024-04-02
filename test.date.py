@@ -12,3 +12,11 @@ def test_date():
     diferencia = fecha1 - fecha2
     assert diferencia == 365
 
+def test_lt():
+    assert fecha1 < fecha2
+
+def test_gt():
+    assert fecha2 > fecha1
+
+def test_eq():
+    assert fecha1 == fecha1
