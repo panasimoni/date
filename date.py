@@ -3,13 +3,23 @@ from __future__ import annotations
 
 class Date:
     def __init__(self, day: int, month: int, year: int):
-        '''Validar día, mes y año. Se comprobará si la fecha es correcta
-        (entre el 1-1-1900 y el 31-12-2050); si el día no es correcto, lo pondrá a 1;
-        si el mes no es correcto, lo pondrá a 1; y si el año no es correcto, lo pondrá a 1900.
-        Ojo con los años bisiestos.
-        El 1-1-1900 fue lunes.
-        '''
-        ...
+        if not (1900 <= year <= 2050):
+            year = 1900
+        
+        if not (1 <= month <= 12):
+            month = 1
+        
+            days_in_month = [31, 28 if not self.is_leap_year(year) else 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        
+        if not (1 <= day <= days_in_month[month - 1]):
+            day = 1
+        
+            self.day = day
+            self.month = month
+            self.year = year
+
+    def is_leap_year(self, year):
+        return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
 
     @staticmethod
     def is_leap_year(year: int) -> bool:
