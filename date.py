@@ -39,8 +39,7 @@ class Date:
         for y in range(1900, self.year):
             if self.is_leap_year(y):
                 days += 366
-            else:
-                days += 365
+    
 
         for m in range(1, self.month):
             days += self.days_in_month(m, self.year)
@@ -76,9 +75,7 @@ class Date:
         ...
 
     def __sub__(self, other: Date | int) -> int | Date:
-        '''Dos opciones:
-        1) Restar una fecha a otra fecha -> Número de días
-        2) Restar un número de días la fecha -> Nueva fecha'''
+        
         ...
 
     def __lt__(self, other) -> bool:
